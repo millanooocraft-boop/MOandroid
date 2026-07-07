@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MO</string>
+    <string name="app_tagline">مساعدك الذكي</string>
+
+    <!-- Common -->
+    <string name="ok">موافق</string>
+    <string name="cancel">إلغاء</string>
+    <string name="back">رجوع</string>
+    <string name="send">إرسال</string>
+    <string name="voice">صوت</string>
+
+    <!-- Home -->
+    <string name="home_greeting">مساء الخير 👋</string>
+    <string name="home_subtitle">يا صديقي، كيف أساعدك؟</string>
+    <string name="home_status_ready">جاهز للاستماع</string>
+
+    <!-- Chat -->
+    <string name="chat_input_hint">اكتب رسالتك...</string>
+    <string name="chat_welcome">أهلاً بك! 👋 أنا MO، مساعدك الذكي.\nقول لي إيش تحتاج وأساعدك.</string>
+
+    <!-- AI Providers -->
+    <string name="ai_gemini_flash">Gemini Flash · مجاني</string>
+    <string name="ai_gemini_pro">Gemini Pro</string>
+    <string name="ai_minimax">MiniMax</string>
+    <string name="ai_claude">Claude</string>
+    <string name="ai_gpt4o">GPT-4o</string>
+
+    <!-- Settings -->
+    <string name="settings_title">الإعدادات</string>
+    <string name="settings_ai">🧠 الذكاء الاصطناعي</string>
+    <string name="settings_voice">🎙️ الصوت</string>
+    <string name="settings_integrations">🔌 التطبيقات</string>
+    <string name="settings_account">👤 الحساب</string>
+
+    <!-- Voice -->
+    <string name="voice_listening">أنا أستمع...</string>
+    <string name="voice_say_wake">قول \"يا مو\"</string>
+
+    <!-- AdMob IDs (configure in local.properties) -->
+    <string name="admob_app_id" translatable="false">ca-app-pub-XXXXXXXXXXXXXXXX~XXXXXXXXXX</string>
+    <string name="admob_banner_id" translatable="false">ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX</string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MO</string>
+    <string name="app_tagline">Your AI Assistant</string>
+
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="back">Back</string>
+    <string name="send">Send</string>
+    <string name="voice">Voice</string>
+
+    <string name="home_greeting">Good evening 👋</string>
+    <string name="home_subtitle">Hey friend, how can I help?</string>
+    <string name="home_status_ready">Ready to listen</string>
+
+    <string name="chat_input_hint">Type your message...</string>
+    <string name="chat_welcome">Hi there! 👋 I\'m MO, your smart assistant.\nTell me what you need.</string>
+
+    <string name="ai_gemini_flash">Gemini Flash · Free</string>
+    <string name="ai_gemini_pro">Gemini Pro</string>
+    <string name="ai_minimax">MiniMax</string>
+    <string name="ai_claude">Claude</string>
+    <string name="ai_gpt4o">GPT-4o</string>
+
+    <string name="settings_title">Settings</string>
+    <string name="settings_ai">🧠 AI</string>
+    <string name="settings_voice">🎙️ Voice</string>
+    <string name="settings_integrations">🔌 Integrations</string>
+    <string name="settings_account">👤 Account</string>
+
+    <string name="voice_listening">I\'m listening...</string>
+    <string name="voice_say_wake">Say \"Hi MO\"</string>
+</resources>

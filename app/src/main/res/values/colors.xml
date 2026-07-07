@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="mo_purple">#A78BFA</color>
+    <color name="mo_purple_deep">#7C3AED</color>
+    <color name="mo_purple_light">#C4B5FD</color>
+    <color name="mo_green">#34D399</color>
+    <color name="mo_green_deep">#10B981</color>
+    <color name="mo_warn">#FBBF24</color>
+    <color name="mo_danger">#F87171</color>
+    <color name="mo_blue">#60A5FA</color>
+    <color name="mo_orange">#FB923C</color>
+
+    <color name="bg_dark">#0A0E1A</color>
+    <color name="bg_dark_2">#0F1424</color>
+    <color name="surface">#161B2E</color>
+    <color name="surface_2">#1F2540</color>
+
+    <color name="text_primary">#F1F5F9</color>
+    <color name="text_secondary">#94A3B8</color>
+    <color name="text_tertiary">#64748B</color>
+
+    <color name="splash_background">#0A0E1A</color>
+    <color name="status_bar">#0A0E1A</color>
+</resources>
