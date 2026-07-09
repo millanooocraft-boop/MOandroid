@@ -1,4 +1,4 @@
-name: 🏗️ Build MO APK
+name: Build MO APK
 
 on:
   push:
@@ -12,34 +12,37 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: ☕ Set up JDK 17
+      - name: Setup JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: 🤖 Set up Android SDK
+      - name: Setup Android SDK
         uses: android-actions/setup-android@v3
         with:
           api-level: 34
           build-tools-version: '34.0.0'
 
-      - name: 🔐 Create local.properties
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.7'
+
+      - name: Create local.properties
         run: |
           cat > local.properties << EOF
           GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}
           sdk.dir=$ANDROID_SDK_ROOT
           EOF
 
-      - name: 🔑 Make gradlew executable
-        run: chmod +x ./gradlew
+      - name: Build Debug APK
+        run: gradle assembleDebug --no-daemon --stacktrace
 
-      - name: 🏗️ Build Debug APK
-        run: ./gradlew assembleDebug --no-daemon --stacktrace
-
-      - name: 📤 Upload APK
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: MO-debug-apk
           path: app/build/outputs/apk/debug/app-debug.apk
           retention-days: 30
+          if-no-files-found: error
