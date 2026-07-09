@@ -57,4 +57,6 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
 
     implementation("com.google.android.gms:play-services-ads:23.2.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.4")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 }
