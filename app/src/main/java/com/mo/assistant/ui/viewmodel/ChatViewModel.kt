@@ -122,9 +122,18 @@ class ChatViewModel(application: Application) : AndroidViewModel(application) {
         _uiState.update { it.copy(language = language) }
     }
 
-    fun clearChat() {
-        _uiState.update { it.copy(messages = emptyList()) }
-        init  // re-add welcome message
+     fun clearChat() {
+        _uiState.update {
+            it.copy(
+                messages = listOf(
+                    Message(
+                        content = "أهلاً بك! 👋 أنا MO، مساعدك الذكي.\nقول لي إيش تحتاج وأساعدك.",
+                        role = Role.ASSISTANT,
+                        aiProvider = AIProvider.GEMINI_FLASH
+                    )
+                )
+            )
+        }
     }
 
     private fun <T, R> Result<T>.map(transform: (T) -> R): Result<R> {
