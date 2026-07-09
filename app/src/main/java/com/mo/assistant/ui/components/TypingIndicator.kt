@@ -1,6 +1,7 @@
 package com.mo.assistant.ui.components
 
 import androidx.compose.animation.core.RepeatMode
+import androidx.compose.material3.Text
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.rememberInfiniteTransition
