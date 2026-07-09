@@ -57,6 +57,7 @@ class ChatRepository(
 
             val response = geminiService.generateContent(
                 model = provider.modelId,
+                apiKey = GeminiService.getApiKey(),
                 request = request
             )
 
