@@ -128,8 +128,8 @@ fun ChatScreen(
                 contentPadding = PaddingValues(16.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                items(state.messages, key = { it.id }) { msg ->
-                    MessageBubble(message = msg)
+                items(state.messages.size) = { index ->
+                    val msg = state.messages[index]
                 }
                 if (state.isLoading) {
                     item { TypingIndicator() }
