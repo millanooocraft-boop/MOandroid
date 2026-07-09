@@ -12,28 +12,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.mo.assistant.BuildConfig
 
-/**
- * Banner ad placeholder.
- *
- * TODO: Replace with actual AdView when ready:
- *
- * AndroidView(
- *     factory = { context ->
- *         AdView(context).apply {
- *             setAdSize(AdSize.BANNER)
- *             adUnitId = BuildConfig.ADMOB_BANNER_ID
- *             loadAd(AdRequest.Builder().build())
- *         }
- *     },
- *     modifier = Modifier.fillMaxWidth()
- * )
- */
 @Composable
 fun BannerAd() {
-    if (BuildConfig.ADMOB_BANNER_ID.startsWith("ca-app-pub-XXXX")) return  // not configured
-
     Box(
         modifier = Modifier
             .fillMaxWidth()
