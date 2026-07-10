@@ -4,7 +4,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -53,7 +52,6 @@ fun ChatScreen(
     var inputText by remember { mutableStateOf("") }
     val keyboard = LocalSoftwareKeyboardController.current
 
-    // Auto-scroll to bottom on new messages
     LaunchedEffect(state.messages.size) {
         if (state.messages.isNotEmpty()) {
             listState.animateScrollToItem(state.messages.size - 1)
@@ -65,7 +63,6 @@ fun ChatScreen(
         color = MOBgDark
     ) {
         Column(modifier = Modifier.fillMaxSize()) {
-            // Top bar
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -112,14 +109,8 @@ fun ChatScreen(
                         fontSize = 11.sp
                     )
                 }
-                // AI selector button
-                AIProviderChip(
-                    provider = state.currentProvider,
-                    onClick = { /* show picker */ }
-                )
             }
 
-            // Messages
             LazyColumn(
                 modifier = Modifier
                     .weight(1f)
@@ -128,15 +119,18 @@ fun ChatScreen(
                 contentPadding = PaddingValues(16.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                items(state.messages.size) = { index ->
+                val msgCount = state.messages.size
+                items(count = msgCount, key = { idx -> state.messages[idx].id }) { index ->
                     val msg = state.messages[index]
+                    MessageBubble(message = msg)
                 }
                 if (state.isLoading) {
-                    item { TypingIndicator() }
+                    item {
+                        TypingIndicator()
+                    }
                 }
             }
 
-            // Input
             Surface(
                 color = MOBgDark2,
                 modifier = Modifier.fillMaxWidth()
@@ -179,9 +173,8 @@ fun ChatScreen(
                         )
                     )
 
-                    // Voice mic button
                     IconButton(
-                        onClick = { /* TODO: voice input */ },
+                        onClick = { },
                         modifier = Modifier
                             .size(48.dp)
                             .background(MOSurface, CircleShape)
@@ -193,7 +186,6 @@ fun ChatScreen(
                         )
                     }
 
-                    // Send button
                     IconButton(
                         onClick = {
                             if (inputText.isNotBlank()) {
@@ -217,29 +209,6 @@ fun ChatScreen(
                     }
                 }
             }
-        }
-    }
-}
-
-@Composable
-private fun AIProviderChip(provider: AIProvider, onClick: () -> Unit) {
-    Surface(
-        shape = RoundedCornerShape(50),
-        color = MOSurface,
-        modifier = Modifier.clickable { onClick() }
-    ) {
-        Row(
-            modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(6.dp)
-        ) {
-            Text(provider.emoji, fontSize = 12.sp)
-            Text(
-                provider.displayNameAr,
-                color = MOTextPrimary,
-                fontSize = 12.sp,
-                fontWeight = FontWeight.SemiBold
-            )
         }
     }
 }
